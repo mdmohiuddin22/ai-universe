@@ -12,10 +12,23 @@
     <header class="">
         <h1 class="text-center fw-bold m-3">AI Universe Hub</h1>
         <div class="vstack col-md-2 mx-auto">
-            <button type="button" class="btn btn-danger fw-bold"><h2>Sort By Date</h2></button>
+            <button id="sort" type="button" class="btn btn-danger fw-bold"><h2>Sort By Date</h2></button>
           </div>
+          <br>
     </header>
-    <main>
+    <main class="container">
+    <section >
+<!-- All card  -->
+      <div id="all-card-container" class="row row-cols-1 row-cols-md-3 m-3 g-4">
+        
+        </div>
+    </section>
+    <!-- spinner start -->
+    <section><div style="height: 400px;" class="d-flex justify-content-center text-success align-items-center">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div></section>
 
         <div class="vstack col-md-2 mx-auto">
             <button type="button" class="btn btn-danger fw-bold"><h2>See More</h2></button>
