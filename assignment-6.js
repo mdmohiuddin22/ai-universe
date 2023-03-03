@@ -7,6 +7,7 @@ const loadData= async()=>{
 }
 const displayData =tools =>{
    const allDataContainer =document.getElementById('all-card-container');
+   tools=tools.slice(0,6)
    tools.forEach(tool =>{
     
     const dataDiv = document.createElement('div');
@@ -21,5 +22,13 @@ const displayData =tools =>{
  `;
  allDataContainer.appendChild(dataDiv);
    })
+}
+
+const toggleSpinner = isLoading => {
+    const loadingSection =document.getElementById('Loading');
+   
+    if(isLoading){
+        loadingSection.classList.remove('d-none')
+    }
 }
 loadData();
