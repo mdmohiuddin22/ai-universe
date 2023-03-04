@@ -19,10 +19,12 @@ const displayData =tools =>{
    <h3>features</h3>
      <h5 class="card-title">${tool.name}</h5>
      <p class="card-text">${tool.description}</p>
+     <div class="d-flex justify-content-between ">  <p class="card-text">${tool.published_in}</p>
      
-  <p class="card-text">${tool.published_in}</p>
-     <img src="image/arrow_forward.png" alt="">
-     
+     <!-- trigger modal -->
+     <div  onclick  type="button"  data-bs-toggle="modal" data-bs-target="#cardDetails">
+     <i  id="arrow" class="fa-solid fa-arrow-right"></i></div>
+     </div>
 
    </div>
  </div>
@@ -41,8 +43,8 @@ const toggleSpinner = isLoading => {
         loadingSection.classList.remove('d-none')
     }
 }
+const loadCardDetail = cardDetails=>{
 
-
-
+}
 
 loadData();
