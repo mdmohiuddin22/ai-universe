@@ -18,7 +18,7 @@ const displayData =tools =>{
    <div class="card-body">
    <h3>features</h3>
      <h5 class="card-title">${tool.name}</h5>
-     <p class="card-text">${tool.description}</p>
+     <p class="card-text">${tool.description ? tool.description:'No! Not yet! Take a break!!!'}</p>
      <div class="d-flex justify-content-between ">  <p class="card-text">${tool.published_in}</p>
      
      <!-- trigger modal -->
@@ -58,7 +58,7 @@ const loadCardDetail =async id=>{
 }
 
 const displayCardDetails =tool =>{
-  console.log(tool.image_link[0]);
+  console.log(tool);
   const modalTile =document.getElementById('cardDetailsLabel');
   modalTile.innerText=tool.tool_name;
   const modalCardDetails=document.getElementById('modal-card-details');
@@ -68,10 +68,5 @@ const displayCardDetails =tool =>{
   <img  src="" alt="">
   `
 }
-// const displayCardDetails =data =>{
-//   // document.getElementById('cardDetailsLabel').innerText=data;
-//   const cardDetailsBody =document.getElementById('modal-body');
-//   cardDetailsBody.innerHTML=`<img src="${tool.image}" class="card-img-top" alt="...">`;
-  
-// }
+
 loadData();
