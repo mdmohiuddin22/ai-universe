@@ -44,12 +44,7 @@ const toggleSpinner = isLoading => {
     }
 }
 
-// const loadCardDetail =(id)=>{
-//   const URL = `https://openapi.programming-hero.com/api/ai/tool/${id}`;
-//   fetch(URL)
-//   .then((res)=>res.json())
-//   .then((data)=> (data));
-// };
+
 const loadCardDetail =async id=>{
   const url=`https://openapi.programming-hero.com/api/ai/tool/${id}`;
   const res = await fetch(url);
@@ -58,14 +53,15 @@ const loadCardDetail =async id=>{
 }
 
 const displayCardDetails =tool =>{
-  console.log(tool);
+  console.log(tool.input_output_examples[0].input
+    );
   const modalTile =document.getElementById('cardDetailsLabel');
   modalTile.innerText=tool.tool_name;
   const modalCardDetails=document.getElementById('modal-card-details');
   modalCardDetails.innerHTML=`
-  <p>${tool.description}</p>
   <img src="${tool.image_link[0]}" class="img-fluid" alt="...">
   <img  src="" alt="">
+  <h3>${tool.input_output_examples[0].input}</h3>
   `
 }
 
