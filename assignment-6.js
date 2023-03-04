@@ -58,13 +58,14 @@ const loadCardDetail =async id=>{
 }
 
 const displayCardDetails =tool =>{
-  console.log(tool);
+  console.log(tool.image_link[0]);
   const modalTile =document.getElementById('cardDetailsLabel');
   modalTile.innerText=tool.tool_name;
   const modalCardDetails=document.getElementById('modal-card-details');
   modalCardDetails.innerHTML=`
   <p>${tool.description}</p>
-  <img scr"${tool.image_link[0]}">
+  <img src="${tool.image_link[0]}" class="img-fluid" alt="...">
+  <img  src="" alt="">
   `
 }
 // const displayCardDetails =data =>{
