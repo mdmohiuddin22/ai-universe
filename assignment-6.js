@@ -44,25 +44,28 @@ const toggleSpinner = isLoading => {
     }
 }
 
-const loadCardDetail =(id)=>{
-  const URL = `https://openapi.programming-hero.com/api/ai/tool/${id}`;
-  fetch(URL)
-  .then((res)=>res.json())
-  .then((data)=> (data));
-};
-// const loadCardDetail= async()=>{
-//   // const url=`https://openapi.programming-hero.com/api/ai/tool/${id}`
-//   // const res =await fetch(url);
-//   // const data =await res.json();
-//   // displayCardDetails(data.data.tools[0]);
-  
+// const loadCardDetail =(id)=>{
+//   const URL = `https://openapi.programming-hero.com/api/ai/tool/${id}`;
+//   fetch(URL)
+//   .then((res)=>res.json())
+//   .then((data)=> (data));
+// };
+const loadCardDetail =async id=>{
+  const url=`https://openapi.programming-hero.com/api/ai/tool/${id}`;
+  const res = await fetch(url);
+  const data = await res.json();
+  displayCardDetails(data.data);
+}
+
+const displayCardDetails =tool =>{
+  console.log(tool);
+  const modalTile =document.getElementById('cardDetailsLabel');
+  modalTile.innerText=tool.tool_name;
+}
+// const displayCardDetails =data =>{
+//   // document.getElementById('cardDetailsLabel').innerText=data;
+//   const cardDetailsBody =document.getElementById('modal-body');
+//   cardDetailsBody.innerHTML=`<img src="${tool.image}" class="card-img-top" alt="...">`;
   
 // }
-
-const displayCardDetails =data =>{
-  // document.getElementById('cardDetailsLabel').innerText=data;
-  const cardDetailsBody =document.getElementById('modal-body');
-  cardDetailsBody.innerHTML=`<img src="${tool.image}" class="card-img-top" alt="...">`;
-  
-}
 loadData();
