@@ -18,7 +18,7 @@ const displayData =tools =>{
    <div class="card-body">
    <h3>features</h3>
      <h5 class="card-title">${tool.name}</h5>
-     <p class="card-text">${tool.description ? tool.description:'No! Not yet! Take a break!!!'}</p>
+     <p class="card-text">${tool.features[1]}</p>
      <div class="d-flex justify-content-between ">  <p class="card-text">${tool.published_in}</p>
      
      <!-- trigger modal -->
@@ -53,8 +53,7 @@ const loadCardDetail =async id=>{
 }
 
 const displayCardDetails =tool =>{
-  console.log(tool.input_output_examples[0].input
-    );
+  console.log(tool.features[1].feature_name);
   const modalTile =document.getElementById('cardDetailsLabel');
   modalTile.innerText=tool.tool_name;
   const modalCardDetails=document.getElementById('modal-card-details');
